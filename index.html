@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pacman</title>
+    <link href='https://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="js/direction.js" type="text/javascript"></script>
+    <script src="js/game.js" type="text/javascript"></script>
+    <script src="js/dot.js" type="text/javascript"></script>
+    <script src="js/level.js" type="text/javascript"></script>
+    <script src="js/pacman.js" type="text/javascript"></script>
+    <script src="js/ghost.js" type="text/javascript"></script>
+
+
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <audio id="pacmanWaka" src="sounds/PacmanWakaWaka04.wav" preload="auto"></audio>
+    <audio id="pacmanOpening" src="sounds/Pacman%20Opening%20Song.mp3" preload="auto"></audio>
+    <audio id="pacmanDies" src="sounds/Pacman%20Dies.mp3" preload="auto"></audio>
+
+    <h1> Something like Pacman! </h1>
+    <div class="content" id = "instructions_container">
+        <button class="back-button">< Back</button>
+        <div class="content-container">
+            <h2>CONTROLS</h2>
+            <p>Use your arrow keys to navigate Pacman.<br>Press P to pause the game and click or press P again to resume.</p>
+            <h2>GHOSTS</h2>
+            <section class="clearfix">
+                <h4>BLINKY</h4>
+                <figure class="ghost-img">
+                    <img src="img/blinky.svg" width="40" height="40">
+                    <figcaption>Blinky</figcaption>
+                </figure>
+                <p>Blinky is the most aggressive ghost. He chases Pacman right away and aims directly to his position.</p>
+
+            </section>
+            <section class="clearfix">
+                <h4>PINKY</h4>
+                <figure class="ghost-img">
+                    <img src="img/pinky.svg" width="40" height="40">
+                    <figcaption>Pinky</figcaption>
+                </figure>
+                <p>Pinky is cool. And pink! And yes, he chases Pacman right from the start, but doesn't aim directly at him ;-)</p>
+
+            </section>
+            <section class="clearfix">
+                <h4>INKY</h4>
+                <figure class="ghost-img">
+                    <img src="img/inky.svg" width="40" height="40">
+                    <figcaption>Inky</figcaption>
+                </figure>
+                <p>Inky starts chasing Pacman, when he has already eaten 30 Pills.</p>
+
+            </section>
+            <section class="clearfix">
+                <h4>CLYDE</h4>
+                <figure class="ghost-img">
+                    <img src="img/clyde.svg" width="40" height="40">
+                    <figcaption>Clyde</figcaption>
+                </figure>
+                <p>Clyde starts chasing Pacman when he has eaten more than 2/3 of all the pills.</p>
+
+            </section>
+        </div>
+
+    </div>
+    <div class="content" id = "highscore_container">
+        <button class="back-button">< Back</button>
+        <div class="content-container">
+            <h2>Highscore</h2>
+            <table id="highscore_table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="content" id = "info_container">
+        <button class="back-button">< Back</button>
+        <div class="content-container">
+            <h2>Information</h2>
+            <p>This game was invented as a little web project for school. It should be kinda like the original pacman game.
+                But the focus was on creating levels automatically just out of a png like the one below!
+                </p> <img width="400"  src="img/level_1.png"><p>The ghosts are very complex, everyone has different rules and so on. Also powerpills were not
+                implemented.</p>
+        </div>
+
+    </div>
+
+
+    <div id="main_container">
+        <div id="score">Score: </div>
+        <div id="lives">Lives:
+
+        </div>
+        <div id="game_container">
+            <div id="game_overlay">
+                <div id="game_overlay_content">
+                    <div class="center" id="title">Click to start</div>
+
+                    <div class="content" id="highscore_input">
+                        <div class="center">Please enter your name</div>
+                        <label id="input_name_label">Name:</label>
+                        <input id="input_name" type="text" />
+                        <input value="Submit" class="back-button" type="button" id="submit_highscore"/>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- game canvas will get inserted here -->
+        <!-- info box -->
+        <div class="controls" id="control_container">
+            <ul>
+                <li class="button" id="info">Info</li>
+                <li class="button" id="highscore">Highscore</li>
+                <li class="button" id="instructions">Instructions</li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="js/index.js" type="text/javascript"></script>
+</html>

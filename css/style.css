@@ -1,0 +1,209 @@
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+body{
+    background-color: black;
+}
+html, h1, h2, h3, a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+.dot {
+    background-color: aquamarine;
+    position: absolute;
+    z-index: 0;
+}
+
+#main_container {
+    width: 640px;
+    height: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    border: dashed 5px black;
+    padding: 10px;
+    background-color: #484944;
+
+}
+#score, #lives {
+    display: inline-block;
+    font-family: 'Press Start 2P', cursive;
+    margin: 5px;
+}
+#score {
+    width: 200px;
+}
+#lives img {
+    width: 25px;
+    height: 20px;
+}
+#game_container {
+    margin-right: auto;
+    margin-left: auto;
+    width: 640px;
+    height: 512px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    z-index : 1;
+
+
+}
+#game_overlay {
+    position: absolute;
+    background: rgba(0,0,0,0.7);
+    height: 100%;
+    width: 640px;
+    max-width: 100%;
+    z-index: 100; /*always in front*/
+}
+
+#game_overlay_content {
+    position: absolute;
+    top: 33%;
+    left: 0;
+    margin-top: 0;
+    max-width: 100%;
+    text-align: center;
+    width: 640px;
+}
+#game_overlay_content #title {
+    text-transform: uppercase;
+    font-size: 150%;
+    color: aliceblue;
+}
+#control_container{
+    display: flex;
+    margin: 15px;
+    padding : 15px;
+    background-color: darkgray;
+    width: auto;
+    height: 180px;
+    border: dashed 2px black;
+    align-items: center;
+    justify-content: center;
+
+}
+#control_container ul {
+    list-style-type: none;
+}
+#control_container ul li {
+    text-align: center;
+    line-height: 40px;
+    font-size: 120%;
+    color: black;
+}
+
+.button:hover {
+    cursor: pointer;
+
+}
+.content {
+    display: none;
+}
+.content h1,h2,h3 {
+    text-align: left;
+}
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 2px;
+}
+
+.content.show {
+    display : block;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
+
+}
+.content-container{
+    padding: 10px;
+    margin: 10px;
+    border: dashed black 5px;
+    background-color: #303030;
+}
+
+.back-button {
+    font-family: 'Press Start 2P', cursive;
+    border : none;
+    height: 30px;
+    width:auto;
+    background-color: burlywood;
+    margin: 10px;
+
+}
+.back-button:hover {
+    color:white;
+    background-color: darkred;
+    cursor: pointer;
+}
+.ghost-img {
+    width: 40px;
+    height: 40px;
+    float: right;
+
+}
+.ghost-img figcaption {
+    font-size: 50%;
+    margin:3px;
+}
+
+#input_name {
+    margin: 20px;
+    padding: 5px;
+    /*display: none; /*default behaviour*/
+    background-color: transparent;
+    border: none;
+    border-bottom: dashed 2px;
+    border-bottom-color: aqua;
+    font-family: 'Press Start 2P', cursive;
+    color: azure;
+
+}
+#input_name_label {
+    margin: 5px;
+    font-family: 'Press Start 2P', cursive;
+    color: azure;
+}
+#input_name:focus {
+    outline: none;
+
+}
+
+/*table*/
+#highscore_table {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+}
+#highscore_table thead th{
+    text-align: left;
+    color: chocolate;
+    border-bottom: dashed 3px antiquewhite;
+    height: 35px;
+}
+
+#highscore_table td {
+    height: 30px;
+    width: 33%;
+    text-align: left;
+}
+#highscore_table tr td:last-child, #highscore_table tr th:last-child {
+    text-align: right;
+}
